@@ -1,0 +1,7 @@
+// RUN: %clang_cc1 -std=c11 -E %s | FileCheck %s
+#include <stdatomic.h>
+
+int bool_lock_free = ATOMIC_BOOL_LOCK_FREE;
+// CHECK: bool_lock_free = {{ *[012] *;}}
+
+int char_lock_free = ATOMIC_CHAR_LOCK_FREE;
